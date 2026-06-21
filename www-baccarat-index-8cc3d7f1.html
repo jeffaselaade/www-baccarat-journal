@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家乐 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f1f3f5;
+            color: #212529;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: white;
+            border-radius: 28px;
+            padding: 3rem 2rem 2.8rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+            border: 1px solid #e9ecef;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1e293b;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #495057;
+            max-width: 620px;
+            margin: 0 auto;
+            border-top: 1px solid #dee2e6;
+            padding-top: 1rem;
+        }
+
+        .hero .sub a {
+            color: #1e293b;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+            transition: opacity 0.15s;
+        }
+
+        .hero .sub a:hover {
+            opacity: 0.7;
+        }
+
+        /* 背景说明卡片 — 更像杂志引言 */
+        .context-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 24px;
+            padding: 1.8rem 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.4rem 0.8rem;
+        }
+
+        .context-card .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #6c757d;
+            background: #f1f3f5;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            border: 1px solid #e9ecef;
+            font-weight: 450;
+        }
+
+        .context-card p {
+            font-size: 1.05rem;
+            color: #2b3035;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .context-card p strong {
+            font-weight: 550;
+            color: #111;
+        }
+
+        /* 三段自然介绍——杂志式卡片网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 24px;
+            padding: 1.8rem 1.8rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+
+        .feature-item .icon-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #6c757d;
+            background: #f8f9fa;
+            padding: 0.15rem 0.6rem;
+            border-radius: 40px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .feature-item p {
+            font-size: 0.98rem;
+            color: #3a3f47;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item .meta-note {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 0.6rem;
+            border-left: 2px solid #dee2e6;
+            padding-left: 0.8rem;
+        }
+
+        /* 尾页访问提示——干净、克制 */
+        .footer-notice {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 24px;
+            padding: 1.6rem 2.2rem;
+            margin-top: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .footer-notice .foot-text {
+            font-size: 0.98rem;
+            color: #2b3035;
+        }
+
+        .footer-notice .foot-text a {
+            color: #1e293b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 450;
+            transition: opacity 0.15s;
+        }
+
+        .footer-notice .foot-text a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-notice .badge {
+            font-size: 0.75rem;
+            color: #495057;
+            background: #f1f3f5;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            border: 1px solid #dee2e6;
+            white-space: nowrap;
+        }
+
+        /* 细节调整 */
+        hr {
+            border: none;
+            border-top: 1px solid #dee2e6;
+            margin: 1.8rem 0 1.2rem;
+        }
+
+        small {
+            color: #6c757d;
+            display: block;
+            text-align: right;
+            margin-top: 1.2rem;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .context-card {
+                padding: 1.2rem 1.4rem;
+            }
+            .footer-notice {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 首页横幅 hero -->
+        <div class="hero">
+            <h1>百家乐</h1>
+            <div class="sub">
+                稳定入口 · 信息页面<br>
+                一份关于 <a href="https://www--baccarat.com">百家乐</a> 的简明专题，聚焦页面结构与内容入口。
+            </div>
+        </div>
+
+        <!-- 背景说明 —— 杂志式引言 -->
+        <div class="context-card">
+            <span class="label">背景</span>
+            <p><strong>百家乐</strong> 作为一类卡牌游戏规则，在数字内容生态中常面临信息过载与入口混乱。本专题从稳定入口和页面说明的角度切入，梳理其基础背景、呈现方式与适用场景，为浏览者提供结构清晰的参考。以下三段信息分别对应规则轮廓、界面特征及阅读环境，力求简洁专业。</p>
+        </div>
+
+        <!-- 三段自然介绍 (杂志卡片网格) -->
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="icon-tag">01 · 规则轮廓</span>
+                <h3>基本逻辑与构成</h3>
+                <p>百家乐主要围绕庄、闲两方进行点数比较，使用标准扑克牌。每局发牌后计算点数，接近9者为胜。规则中不涉及玩家间的对抗，而是基于固定补牌表运行，因此信息呈现更需要清晰的说明层级。</p>
+                <div class="meta-note">通常每轮决策区间较短，页面设计需突出状态提示。</div>
+            </div>
+            <div class="feature-item">
+                <span class="icon-tag">02 · 界面特征</span>
+                <h3>信息密度与编排</h3>
+                <p>围绕百家乐的内容页面，常包含历史路纸、即时数值、桌台选择等模块。为确保稳定访问，页面说明应区分「规则解释」与「操作指引」，并用视觉分区（如浅灰背景、卡片边界）降低认知负荷。</p>
+                <div class="meta-note">细边框与柔和阴影有助于减少干扰，保持专注。</div>
+            </div>
+            <div class="feature-item">
+                <span class="icon-tag">03 · 阅读场景</span>
+                <h3>桌面与移动适配</h3>
+                <p>不论从何种尺寸屏幕浏览，内容的入口稳定性优先于过度动效。页面说明宜采用分段式布局，关键术语（例如「庄」「闲」「点数计算」）可直接在正文中标注，无需依赖外部跳转。</p>
+                <div class="meta-note">响应式卡片设计可兼顾多种设备的信息呈现。</div>
+            </div>
+        </div>
+
+        <!-- 附加 FAQ 摘要 (融入杂志感，保持信息密度) -->
+        <div style="background: white; border: 1px solid #e9ecef; border-radius: 24px; padding: 1.5rem 2rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+                <div style="flex: 1; min-width: 180px;">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6c757d;">常见理解</span>
+                    <p style="margin-top: 0.3rem; font-size: 0.95rem; color: #2b3035;"><strong>百家乐</strong> 是否需要复杂策略？主要依赖既定概率与补牌规则，页面说明应避免夸大技巧，以客观规则为核心。</p>
+                </div>
+                <div style="flex: 1; min-width: 180px;">
+                    <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6c757d;">入口提示</span>
+                    <p style="margin-top: 0.3rem; font-size: 0.95rem; color: #2b3035;">如果你正在寻找关于规则的进一步说明，<a href="https://www--baccarat.com" style="color:#1e293b; text-decoration: underline; text-underline-offset:3px;">百家乐</a> 页面整合了基础介绍与模块导航。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 尾页访问提示 -->
+        <div class="footer-notice">
+            <div class="foot-text">
+                本页为杂志式专题介绍，聚焦 <a href="https://www--baccarat.com">百家乐</a> 的内容入口与信息框架。所有叙述基于规则与界面设计，不构成诱导或承诺。
+            </div>
+            <span class="badge">索引 · 稳定访问</span>
+        </div>
+
+        <hr>
+        <small>页面内容仅供信息参考 · 专题方向：入口与说明</small>
+    </div>
+</body>
+</html>
