@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 信息参考与延伸阅读</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f2f5fa;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #162b41 100%);
+            color: #e8edf3;
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 720px;
+            margin: 0 auto;
+            color: #b0c7db;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 2rem 1.2rem 4rem;
+        }
+
+        /* 信息卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem 2rem;
+            box-shadow: 0 8px 20px rgba(0, 20, 40, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #e9eef3;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(0, 20, 40, 0.08);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #0f2940;
+            border-left: 4px solid #2a7de1;
+            padding-left: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 0.6rem;
+        }
+
+        .card li {
+            padding: 0.3rem 0 0.3rem 1.2rem;
+            position: relative;
+            font-size: 0.92rem;
+            color: #2c3e50;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #2a7de1;
+            font-weight: 700;
+        }
+
+        .accent-link {
+            color: #1b6bc2;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .accent-link:hover {
+            border-bottom-color: #1b6bc2;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin: 2.2rem 0 1.2rem;
+            color: #0f2940;
+            letter-spacing: -0.3px;
+        }
+
+        .text-block {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e7ecf2;
+        }
+
+        .text-block p {
+            margin-bottom: 0.9rem;
+            font-size: 0.96rem;
+            color: #1f2d3b;
+        }
+
+        .faq-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .faq-item {
+            background: #f8faff;
+            border-radius: 14px;
+            padding: 1rem 1.2rem;
+            border-left: 3px solid #2a7de1;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #0f2940;
+        }
+
+        .faq-item span {
+            font-size: 0.9rem;
+            color: #3a4b5e;
+        }
+
+        .info-note {
+            margin-top: 2rem;
+            padding: 0.8rem 1.2rem;
+            background: #eef4fb;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            color: #1f3b57;
+            text-align: center;
+            border: 1px solid #d6e2f0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1.8rem 1rem;
+            color: #6f7d8e;
+            font-size: 0.85rem;
+            border-top: 1px solid #dde4ec;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .faq-preview { grid-template-columns: 1fr; }
+            .card-grid { gap: 1.2rem; }
+            .text-block { padding: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 -->
+    <section class="hero">
+        <h1>信息卡片 · 乐鱼</h1>
+        <p>日常查询、对照参考与延伸阅读的轻量聚合 · 简洁专业</p>
+    </section>
+
+    <div class="container">
+
+        <!-- 用途卡片 + 适合人群 -->
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>📋 日常查询</h3>
+                <p>用于快速检索条目、对照关键词、查阅常见分类。支持多字段过滤与列表视图。</p>
+                <ul>
+                    <li>术语对照与释义</li>
+                    <li>分类标签索引</li>
+                    <li>历史记录回溯</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🔍 对照参考</h3>
+                <p>提供并排比较、差异高亮与版本标记，适合需要横向对比信息的场景。</p>
+                <ul>
+                    <li>条目版本差异</li>
+                    <li>参数/规格对比</li>
+                    <li>来源引用并列</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>🧩 延伸阅读</h3>
+                <p>关联推荐、上下文扩展与外部链接，帮助快速进入更深层信息节点。</p>
+                <ul>
+                    <li>相关主题推荐</li>
+                    <li>引用来源跳转</li>
+                    <li>关键词网络</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>👥 适合人群</h3>
+                <p>面向研究者、编辑、产品人员以及对信息结构化有需求的普通用户。</p>
+                <ul>
+                    <li>内容运营与编辑</li>
+                    <li>产品与数据整理</li>
+                    <li>日常知识管理</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 自然链接段落 + 场景提示 -->
+        <div class="text-block">
+            <p>若你需要更完整的索引体系，可将 <a href="https://online-china-leyu.com" class="accent-link">乐鱼</a> 作为日常参考节点。该站整合了多类目条目与对照功能，适合在信息梳理过程中反复调用。</p>
+            <p>在查阅对照时，建议同时打开多个标签页进行横向比对，利用页面自带的筛选与标记功能提高效率。对于需要长期追踪的条目，可利用收藏或历史模块快速回溯。</p>
+        </div>
+
+        <!-- 场景：延伸阅读卡片式 -->
+        <h2 class="section-title">常见延伸场景</h2>
+        <div class="text-block" style="padding-bottom: 1.2rem;">
+            <p><strong>场景一：术语对照</strong> — 在阅读专业材料时，将关键术语粘贴至搜索区，利用分类索引快速定位释义与关联条目。对比不同来源的定义差异。</p>
+            <p><strong>场景二：版本对比</strong> — 当同一概念存在多个版本或表述时，使用对照模式并排展示，高亮差异点，辅助决策或内容修订。</p>
+            <p><strong>场景三：扩展阅读</strong> — 从当前条目出发，通过推荐链接跳转至相关领域，形成网状知识结构，避免信息孤岛。</p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title" style="margin-top: 2rem;">FAQ 摘要</h2>
+        <div class="faq-preview">
+            <div class="faq-item">
+                <strong>查询范围是否有限制？</strong>
+                <span>主要覆盖通用条目与常见分类，特殊领域可尝试关键词扩展。</span>
+            </div>
+            <div class="faq-item">
+                <strong>对照模式支持几项？</strong>
+                <span>支持 2~4 项条目并排对照，可自行添加/移除对比项。</span>
+            </div>
+            <div class="faq-item">
+                <strong>延伸阅读链接如何生成？</strong>
+                <span>基于条目关联度与引用关系自动推荐，部分可手动关联。</span>
+            </div>
+            <div class="faq-item">
+                <strong>是否开放外部引用？</strong>
+                <span>部分来源标注了原始链接，可供进一步核查。</span>
+            </div>
+        </div>
+
+        <!-- 一句自然提示 -->
+        <div class="info-note">
+            💡 日常信息处理中，建议将 <a href="https://online-china-leyu.com" class="accent-link">乐鱼</a> 加入书签，便于快速调取对照与延伸阅读。
+        </div>
+
+        <div class="footer">
+            © 信息参考页 · 内容仅供学习与参考
+        </div>
+
+    </div>
+
+</body>
+</html>
